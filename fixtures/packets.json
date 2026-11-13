@@ -1,0 +1,23 @@
+[
+  {
+    "source": "lab-a",
+    "descriptor": "v1",
+    "type_url": "type.example/plugin.Reading",
+    "wire": "CgVsYWItYRABGgJ2MSIxCht0eXBlLmV4YW1wbGUvcGx1Z2luLlJlYWRpbmcSEgiCgICAgICAEBEAAAAAAIA0QA==",
+    "payload": "CIKAgICAgIAQEQAAAAAAgDRA"
+  },
+  {
+    "source": "lab-a",
+    "descriptor": "v2",
+    "type_url": "type.example/plugin.Reading",
+    "wire": "CgVsYWItYRACGgJ2MiJCCht0eXBlLmV4YW1wbGUvcGx1Z2luLlJlYWRpbmcSIwiDgICAgICAEBEAAAAAAIA0QBoP6Jma5p6E5o6i5aS055Sy",
+    "payload": "CIOAgICAgIAQEQAAAAAAgDRAGg/omZrmnoTmjqLlpLTnlLI="
+  },
+  {
+    "source": "lab-b",
+    "descriptor": "unknown",
+    "type_url": "type.example/plugin.Unknown",
+    "wire": "CgVsYWItYhADGgd1bmtub3duIiEKG3R5cGUuZXhhbXBsZS9wbHVnaW4uVW5rbm93bhICCAE=",
+    "payload": "CAE="
+  }
+]
