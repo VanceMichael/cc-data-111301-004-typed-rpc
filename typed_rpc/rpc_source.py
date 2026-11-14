@@ -3,6 +3,8 @@ from contextlib import contextmanager
 from pathlib import Path
 import base64
 import json
+import time
+
 import grpc
 
 
@@ -19,10 +21,15 @@ def rpc_source(directory):
 
     def watch(request, context):
         options = json.loads(request or b'{}')
-        for packet in packets:
+        for index, packet in enumerate(packets):
             if not context.is_active():
                 return
             yield base64.b64decode(packet['wire'])
+            if options.get('hang_after') and index + 1 >= options['hang_after']:
+                # 演练用：发出指定条数后挂起，便于确定性地测试取消与背压。
+                while context.is_active():
+                    time.sleep(0.02)
+                return
         if options.get('fail_end'):
             context.abort(grpc.StatusCode.UNAVAILABLE, '资料源暂时中断')
 
